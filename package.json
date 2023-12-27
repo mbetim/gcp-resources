@@ -3,7 +3,7 @@
   "name": "gcp-resources",
   "title": "GCP Resources",
   "description": "Quickly open a project's resource in the Google Cloud Platform",
-  "icon": "command-icon.png",
+  "icon": "gcp-logo.svg",
   "author": "Beta",
   "categories": [
     "Developer Tools"
