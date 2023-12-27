@@ -26,3 +26,7 @@ export const getProjectLinks = async () => {
 
   return filteredProjects;
 };
+
+export const removeProjectLink = async (projectId: string) => {
+  await LocalStorage.removeItem(`project-${projectId}`);
+};

@@ -1,6 +1,6 @@
 import { ActionPanel, List, Action } from "@raycast/api";
 import { useCachedPromise, useFrecencySorting } from "@raycast/utils";
-import { ProjectLink, getProjectLinks } from "./projects-link";
+import { ProjectLink, getProjectLinks, removeProjectLink } from "./projects-link";
 
 const resources = [
   { name: "Cloud Run", url: "/run" },
@@ -37,8 +37,13 @@ const ResourcesList = ({ project }: { project: ProjectLink }) => {
 };
 
 export default function Command() {
-  const { data, isLoading } = useCachedPromise(getProjectLinks);
+  const { data, isLoading, revalidate } = useCachedPromise(getProjectLinks);
   const { data: projects, visitItem } = useFrecencySorting(data, { namespace: "projects" });
+
+  const onRemoveProject = async (project: ProjectLink) => {
+    await removeProjectLink(project.id);
+    revalidate();
+  };
 
   return (
     <List isLoading={isLoading}>
@@ -53,6 +58,12 @@ export default function Command() {
                 title="Choose a Resource"
                 target={<ResourcesList project={project} />}
                 onPush={() => visitItem(project)}
+              />
+
+              <Action
+                title="Remove Project"
+                shortcut={{ modifiers: ["ctrl"], key: "x" }}
+                onAction={() => onRemoveProject(project)}
               />
             </ActionPanel>
           }
