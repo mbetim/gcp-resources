@@ -11,9 +11,9 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "index",
+      "name": "gcp",
       "title": "GCP",
-      "subtitle": "Choose a project and open a resource",
+      "subtitle": "Open GCP resource",
       "description": "Choose a project and open a resource",
       "mode": "view"
     }
@@ -37,3 +37,4 @@
     "publish": "npx @raycast/api@latest publish"
   }
 }
+
