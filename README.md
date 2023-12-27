@@ -1,3 +1,4 @@
 # GCP Resources
 
-Quickly open a project's resource in the Google Cloud Platform
+A Raycast extension to quickly open a project's resource in the Google Cloud Platform
+
