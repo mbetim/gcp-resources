@@ -16,6 +16,22 @@
       "subtitle": "Open GCP resource",
       "description": "Choose a project and open a resource",
       "mode": "view"
+    },
+    {
+      "name": "link-project",
+      "title": "Link Project",
+      "description": "Save the project name, id and user to be opened with the gcp command",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "defaultUserId",
+      "title": "Default user ID",
+      "description": "Which default user should be used when opening resources the resources",
+      "placeholder": "0",
+      "required": false,
+      "type": "textfield"
     }
   ],
   "dependencies": {
@@ -38,4 +54,3 @@
     "publish": "npx @raycast/api@latest publish"
   }
 }
-
