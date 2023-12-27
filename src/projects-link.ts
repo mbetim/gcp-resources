@@ -13,3 +13,16 @@ export const saveProjectLink = async (project: ProjectLink) => {
 
   await LocalStorage.setItem(`project-${project.id}`, JSON.stringify(project));
 };
+
+export const getProjectLinks = async () => {
+  const savedProjects = await LocalStorage.allItems();
+  const filteredProjects: ProjectLink[] = [];
+
+  for (const [key, value] of Object.entries(savedProjects)) {
+    if (!key.startsWith("project-")) continue;
+
+    filteredProjects.push(JSON.parse(value));
+  }
+
+  return filteredProjects;
+};
