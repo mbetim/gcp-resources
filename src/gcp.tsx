@@ -10,6 +10,8 @@ const resources = [
   { name: "Cloud Scheduler", url: "/cloudscheuler" },
   { name: "Cloud Storage", url: "/storage/browser" },
   { name: "Cloud Overview", url: "/home/dashboard" },
+  { name: "Cloud DNS", url: "/net-services/dns/zones" },
+  { name: "Compute Engine", url: "/compute/instances" },
 ];
 
 const ResourcesList = ({ project }: { project: ProjectLink }) => {
