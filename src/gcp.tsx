@@ -12,6 +12,7 @@ const resources = [
   { name: "Cloud Overview", url: "/home/dashboard" },
   { name: "Cloud DNS", url: "/net-services/dns/zones" },
   { name: "Compute Engine", url: "/compute/instances" },
+  { name: "Artifact Registry", url: "/artifacts" },
 ];
 
 const ResourcesList = ({ project }: { project: ProjectLink }) => {
