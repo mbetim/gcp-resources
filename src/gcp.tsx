@@ -68,6 +68,12 @@ export default function Command() {
                 shortcut={{ modifiers: ["ctrl"], key: "x" }}
                 onAction={() => onRemoveProject(project)}
               />
+
+              <Action.CopyToClipboard
+                title="Copy Project ID"
+                shortcut={{ modifiers: ["cmd"], key: "." }}
+                content={project.id}
+              />
             </ActionPanel>
           }
         />
